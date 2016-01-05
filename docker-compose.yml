@@ -1,5 +1,6 @@
 nginx:
   image: sin30/nginx
+  container_name: nginx
   env_file: .env
   ports:
    - 80:80
@@ -9,6 +10,7 @@ nginx:
 
 php-fpm:
   image: sin30/php-fpm
+  container_name: php-fpm
   env_file: .env
   links:
    - mysql
@@ -18,6 +20,7 @@ php-fpm:
 
 mysql:
   image: sin30/mysql
+  container_name: mysql
   env_file: .env
   ports:
    - 3306:3306
@@ -26,6 +29,7 @@ mysql:
 
 redis:
   image: sin30/redis
+  container_name: redis
   env_file: .env
   ports:
    - 6379:6379
