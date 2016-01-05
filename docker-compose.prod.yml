@@ -1,6 +1,5 @@
 nginx:
-  build: nginx
-  dockerfile: Dockerfile-prod
+  image: sin30/nginx
   env_file: .env
   ports:
    - 80:80
@@ -9,19 +8,16 @@ nginx:
    - php-fpm
 
 php-fpm:
-  build: php-fpm
-  dockerfile: Dockerfile-prod
+  image: sin30/php-fpm
   env_file: .env
   links:
    - mysql
    - redis
 
 mysql:
-  build: mysql
-  dockerfile: Dockerfile-prod
+  image: sin30/mysql
   env_file: .env
 
 redis:
-  build: redis
-  dockerfile: Dockerfile-prod
+  image: sin30/redis
   env_file: .env

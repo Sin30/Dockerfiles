@@ -1,6 +1,5 @@
 nginx:
-  build: nginx
-  dockerfile: Dockerfile
+  image: sin30/nginx:dev
   env_file: .env
   ports:
    - 80:80
@@ -9,8 +8,7 @@ nginx:
    - php-fpm
 
 php-fpm:
-  build: php-fpm
-  dockerfile: Dockerfile
+  image: sin30/php-fpm:dev
   env_file: .env
   links:
    - mysql
@@ -19,8 +17,7 @@ php-fpm:
    - ~/Code/Dockerfiles/html:/data/scripts
 
 mysql:
-  build: mysql
-  dockerfile: Dockerfile
+  image: sin30/mysql:dev
   env_file: .env
   ports:
    - 3306:3306
@@ -28,8 +25,7 @@ mysql:
    - /data/mysql:/var/lib/mysql
 
 redis:
-  build: redis
-  dockerfile: Dockerfile
+  image: sin30/redis:dev
   env_file: .env
   ports:
    - 6379:6379
