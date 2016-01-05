@@ -1,0 +1,10 @@
+FROM php:7.0-fpm
+
+MAINTAINER Jason Guo "sin30.net@gmail.com"
+
+ENV APP_ENV ${APP_ENV:-prod}
+
+COPY conf /usr/local/etc
+
+RUN cd /usr/local/etc/php && ln -sf php.ini-${APP_ENV} php.ini \
+	&& docker-php-ext-install pdo_mysql

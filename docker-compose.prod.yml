@@ -1,0 +1,27 @@
+nginx:
+  build: nginx
+  dockerfile: Dockerfile-prod
+  env_file: .env
+  ports:
+   - 80:80
+   - 443:443
+  links:
+   - php-fpm
+
+php-fpm:
+  build: php-fpm
+  dockerfile: Dockerfile-prod
+  env_file: .env
+  links:
+   - mysql
+   - redis
+
+mysql:
+  build: mysql
+  dockerfile: Dockerfile-prod
+  env_file: .env
+
+redis:
+  build: redis
+  dockerfile: Dockerfile-prod
+  env_file: .env
