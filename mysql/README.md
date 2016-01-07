@@ -1,1 +1,5 @@
-# Files to build docker images.
+# Docker image for MySQL
+
+```shell
+docker run -d sin30/mysql
+```
