@@ -16,7 +16,7 @@ php-fpm:
    - mysql
    - redis
   volumes:
-   - ~/Code/Dockerfiles/html:/data/scripts
+   - ~/Code/Dockerfiles/html:/var/www/html
 
 mysql:
   image: sin30/mysql
