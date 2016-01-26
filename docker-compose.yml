@@ -9,7 +9,7 @@ nginx:
   links:
    - php-fpm
   volumes:
-   - ~/Documents/Certificate:/etc/nginx/ssl/certificate
+   - ~/Documents/certificate/live:/etc/nginx/ssl/certificate
 
 php-fpm:
   # image: sin30/php-fpm
