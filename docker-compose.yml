@@ -1,5 +1,6 @@
 nginx:
-  image: sin30/nginx
+  # image: sin30/nginx
+  build: nginx
   container_name: nginx
   env_file: .env
   ports:
@@ -7,9 +8,12 @@ nginx:
    - 443:443
   links:
    - php-fpm
+  volumes:
+   - ~/Documents/Certificate:/etc/nginx/ssl/certificate
 
 php-fpm:
-  image: sin30/php-fpm
+  # image: sin30/php-fpm
+  build: php-fpm
   container_name: php-fpm
   env_file: .env
   privileged: true
@@ -20,7 +24,8 @@ php-fpm:
    - ~/Code/Dockerfiles/html:/var/www/html
 
 mysql:
-  image: sin30/mysql
+  # image: sin30/mysql
+  build: mysql
   container_name: mysql
   env_file: .env
   ports:
@@ -29,7 +34,8 @@ mysql:
    - /data/mysql:/var/lib/mysql
 
 redis:
-  image: sin30/redis
+  # image: sin30/redis
+  build: redis
   container_name: redis
   env_file: .env
   privileged: true
