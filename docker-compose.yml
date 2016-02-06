@@ -12,8 +12,6 @@ services:
      - 443:443
     links:
      - php-fpm
-    volumes:
-     - ~/Documents/certificate/live:/etc/nginx/ssl/certificate
 
   php-fpm:
     image: sin30/php-fpm
