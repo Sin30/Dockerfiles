@@ -12,6 +12,8 @@ services:
      - 443:443
     links:
      - php-fpm
+    volumes:
+     - ~/Code/Dockerfiles/html:/var/www/html
 
   php-fpm:
     image: sin30/php-fpm
