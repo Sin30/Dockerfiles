@@ -1,4 +1,4 @@
-FROM nginx:1.9
+FROM nginx:mainline-alpine
 
 MAINTAINER Jason Guo "sin30.net@gmail.com"
 

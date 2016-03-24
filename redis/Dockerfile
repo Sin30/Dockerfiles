@@ -1,4 +1,4 @@
-FROM redis:3.0
+FROM redis:3.0-alpine
 
 MAINTAINER Jason Guo "sin30.net@gmail.com"
 
