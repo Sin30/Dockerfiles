@@ -20,7 +20,6 @@ services:
     build: php-fpm
     container_name: php-fpm
     env_file: .env
-    privileged: true
     links:
      - mysql
      - redis
