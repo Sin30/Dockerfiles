@@ -12,3 +12,11 @@ Use `docker-machine ip default` to find your machine's ip.
 Visit `http://your_machine_ip/` to test.
 
 You can put your php scripts in /html folder.
+
+TODO:
+
+* redis image priviledge mode for overcommit_memory, somaxconn, transparent_hugepage
+* redis image config tcp-backlog 128
+* php-fpm image needs to active hugepage
+
+Wait for version 1.12 to support --sysctl option.
