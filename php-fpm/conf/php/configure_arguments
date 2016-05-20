@@ -6,8 +6,8 @@ configure arguments:
 --with-fpm-group=www-data
 --disable-cgi
 --enable-mysqlnd
+--enable-mbstring
 --with-curl
+--with-libedit
 --with-openssl
---with-readline
---with-recode
 --with-zlib
