@@ -11,7 +11,7 @@ Use `docker-machine ip default` to find your machine's ip.
 
 Visit `http://your_machine_ip/` to test.
 
-You can put your php scripts in /html folder.
+You can put your php scripts in /html folder, and public files in /html/public folder.
 
 TODO:
 
