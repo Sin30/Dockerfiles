@@ -4,6 +4,8 @@ Docker files to build docker images.
 ```shell
 cp .env.example .env
 vi .env
+cp docker-compose-example.yml docker-compose.yml
+vi docker-compose.yml
 docker-compose up
 ```
 

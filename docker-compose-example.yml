@@ -1,0 +1,47 @@
+version: '2'
+
+services:
+
+  nginx:
+    image: sin30/nginx
+    #build: nginx
+    container_name: nginx
+    env_file: .env
+    ports:
+     - 80:80
+     - 443:443
+    links:
+     - php-fpm
+    volumes:
+     - ~/Code/Dockerfiles/html:/var/www/html
+
+  php-fpm:
+    image: sin30/php-fpm
+    #build: php-fpm
+    container_name: php-fpm
+    env_file: .env
+    links:
+     - mysql
+     - redis
+    volumes:
+     - ~/Code/Dockerfiles/html:/var/www/html
+
+  mysql:
+    image: sin30/mysql
+    #build: mysql
+    container_name: mysql
+    env_file: .env
+    ports:
+     - 3306:3306
+    volumes:
+     - /data/mysql:/var/lib/mysql
+
+  redis:
+    image: sin30/redis
+    #build: redis
+    container_name: redis
+    env_file: .env
+    ports:
+     - 6379:6379
+    volumes:
+     - /data/redis:/data
