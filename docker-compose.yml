@@ -4,7 +4,7 @@ services:
 
   nginx:
     image: sin30/nginx
-    build: nginx
+    #build: nginx
     container_name: nginx
     env_file: .env
     ports:
@@ -17,7 +17,7 @@ services:
 
   php-fpm:
     image: sin30/php-fpm
-    build: php-fpm
+    #build: php-fpm
     container_name: php-fpm
     env_file: .env
     links:
@@ -28,7 +28,7 @@ services:
 
   mysql:
     image: sin30/mysql
-    build: mysql
+    #build: mysql
     container_name: mysql
     env_file: .env
     ports:
@@ -38,7 +38,7 @@ services:
 
   redis:
     image: sin30/redis
-    build: redis
+    #build: redis
     container_name: redis
     env_file: .env
     ports:
