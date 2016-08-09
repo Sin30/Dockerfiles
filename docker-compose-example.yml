@@ -23,6 +23,7 @@ services:
     links:
      - mysql
      - redis
+     - elasticsearch
     volumes:
      - ~/Code/Dockerfiles/html:/var/www/html
 
@@ -45,3 +46,15 @@ services:
      - 6379:6379
     volumes:
      - /data/redis:/data
+
+  elasticsearch:
+    image: sin30/elasticsearch
+    #build: elasticsearch
+    container_name: elasticsearch
+    env_file: .env
+    ports:
+     - 9200:9200
+     - 9300:9300
+    volumes:
+     - /data/elasticsearch:/usr/share/elasticsearch/data
+
