@@ -2,6 +2,14 @@ FROM php:7.0-fpm-alpine
 
 MAINTAINER Jason Guo "sin30.net@gmail.com"
 
+RUN apk add --no-cache \
+		git
+
+RUN apk add --no-cache --virtual .phpize-deps $PHPIZE_DEPS \
+    && pecl install redis \
+    && docker-php-ext-enable redis \
+    && apk del .phpize-deps
+
 RUN docker-php-ext-install pdo_mysql \
 	&& curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
 	&& composer config -g repo.packagist composer https://packagist.phpcomposer.com \
