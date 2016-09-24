@@ -3,6 +3,7 @@ FROM php:7.0-fpm-alpine
 MAINTAINER Jason Guo "sin30.net@gmail.com"
 
 RUN apk add --no-cache \
+		libmcrypt-dev \
 		git
 
 RUN apk add --no-cache --virtual .phpize-deps $PHPIZE_DEPS \
