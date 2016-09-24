@@ -10,7 +10,7 @@ RUN apk add --no-cache --virtual .phpize-deps $PHPIZE_DEPS \
     && docker-php-ext-enable redis \
     && apk del .phpize-deps
 
-RUN docker-php-ext-install pdo_mysql \
+RUN docker-php-ext-install pdo_mysql mcrypt \
 	&& curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
 	&& composer config -g repo.packagist composer https://packagist.phpcomposer.com \
 	&& composer global require "hirak/prestissimo:^0.3"
